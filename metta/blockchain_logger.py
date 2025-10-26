@@ -133,7 +133,7 @@ class BlockchainLogger:
                 "success": True,
                 "tx_hash": tx_hash,
                 "network": "demo (local)",
-                "explorer_url": f"https://explore-testnet.fetch.ai/transactions/{tx_hash}",
+                "explorer_url": f"https://explore-dorado.fetch.ai/transactions/{tx_hash}",
                 "memo": trade_json,
                 "demo_mode": True,
                 "note": "Trade logged locally (demo mode) - perfect for hackathon demo!"
@@ -167,11 +167,14 @@ class BlockchainLogger:
             # Extract transaction hash from SubmittedTx object
             tx_hash = tx.tx_hash if hasattr(tx, 'tx_hash') else str(tx)
             
+            # Fix explorer URL - remove network suffix for dorado-1
+            explorer_base = "https://explore-dorado.fetch.ai" if self.network == "dorado-1" else f"https://explore-{self.network}.fetch.ai"
+            
             return {
                 "success": True,
                 "tx_hash": tx_hash,
                 "network": self.network,
-                "explorer_url": f"https://explore-{self.network}.fetch.ai/transactions/{tx_hash}",
+                "explorer_url": f"{explorer_base}/transactions/{tx_hash}",
                 "memo": memo
             }
         
