@@ -147,14 +147,6 @@ Track your investments in real-time:
 
 </div>
 
-**Top 5 Mistakes Identified:**
-1. 🚫 **Lack of Diversification** - Don't put all eggs in one basket
-2. 🚫 **Trying to Time the Market** - Time IN market > timing THE market
-3. 🚫 **Ignoring Emergency Fund** - 6-12 months expenses before investing
-4. 🚫 **Emotional Trading** - FOMO and panic selling destroy returns
-5. 🚫 **Neglecting Fees** - High expense ratios eat into returns
-
----
 
 ##  What Makes AutoVest Different?
 
