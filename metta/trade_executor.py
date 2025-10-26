@@ -266,8 +266,13 @@ class TradeExecutor:
         
         if self.alpaca_client:
             try:
+                from alpaca.trading.requests import GetOrdersRequest
                 from alpaca.trading.enums import QueryOrderStatus
-                orders = self.alpaca_client.get_orders(status=QueryOrderStatus.OPEN)
+                
+                # Use GetOrdersRequest to filter open orders
+                request = GetOrdersRequest(status=QueryOrderStatus.OPEN)
+                orders = self.alpaca_client.get_orders(filter=request)
+                
                 for order in orders:
                     pending["orders"].append({
                         "symbol": order.symbol,
